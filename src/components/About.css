@@ -1,0 +1,142 @@
+.about {
+  background-color: var(--color-bg-primary);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.about__image-container {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about__image-container::before {
+  content: '';
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  right: calc(var(--spacing-md) * -1);
+  bottom: calc(var(--spacing-md) * -1);
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.about__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__content {
+  padding: var(--spacing-md) 0;
+}
+
+.about__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.about__title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-top: var(--spacing-sm);
+}
+
+.about__text {
+  margin-bottom: var(--spacing-lg);
+}
+
+.about__text p {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}
+
+.about__stats {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: var(--spacing-xs);
+}
+
+@media (max-width: 1024px) {
+  .about__grid {
+    gap: var(--spacing-lg);
+  }
+
+  .about__stats {
+    gap: var(--spacing-md);
+  }
+
+  .about__stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .about__image-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about__image-container::before {
+    display: none;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .about__title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__text p {
+    max-width: none;
+  }
+
+  .about__stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
