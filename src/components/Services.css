@@ -65,12 +65,6 @@
   right: 0;
   padding: var(--spacing-lg) var(--spacing-md);
   z-index: 1;
-  transform: translateY(0);
-  transition: transform var(--transition-normal);
-}
-
-.services__card:hover .services__card-content {
-  transform: translateY(-80px);
 }
 
 .services__card-title {
@@ -82,14 +76,15 @@
 .services__card-description {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  transition: max-height var(--transition-normal), opacity var(--transition-normal);
 }
 
 .services__card:hover .services__card-description {
+  max-height: 200px;
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
@@ -116,15 +111,7 @@
   }
 
   .services__card-description {
+    max-height: 200px;
     opacity: 1;
-    transform: translateY(0);
-  }
-
-  .services__card-content {
-    transform: translateY(-80px);
-  }
-
-  .services__card:hover .services__card-content {
-    transform: translateY(-80px);
   }
 }
