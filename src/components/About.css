@@ -55,12 +55,12 @@
 }
 
 .about__text {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .about__text p {
   margin-bottom: var(--spacing-sm);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -91,6 +91,26 @@
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
   margin-top: var(--spacing-xs);
+}
+
+.about__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.about__instagram:hover {
+  color: #ffffff;
+}
+
+.about__instagram svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 @media (max-width: 1024px) {

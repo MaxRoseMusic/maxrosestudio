@@ -17,18 +17,20 @@ export default function About() {
             <h2 className="about__title">À propos</h2>
             <div className="about__text">
               <p>
-                Bienvenue au Max Rose Studio, un espace dédié à la création musicale
-                où passion et professionnalisme se rencontrent.
+              Passionné depuis le plus jeune âge, c'est par la guitare que je fais ma rencontre avec la musique. 
+              <br />
+              Très rapidement, l'envie d'enregistrer se fait ressentir et c'est avec des amis dans un espace improvisé que la constat s'impose&nbsp;: je veux produire la musique des artistes qui m'entourent.
+
               </p>
               <p>
-                Fort d'une expérience dans l'industrie musicale, le studio offre
-                un environnement acoustique de qualité et un équipement de pointe
-                pour donner vie à vos projets artistiques.
+              Aujourd'hui, fort de l'aménagement de 2 home studios, l'aboutissement de nombreux projets, l'accompagnement de dizaines d'artistes et la connaissance de mon matériel et de mon espace, je propose un accompagnement complet de la composition au mastering.
+              <br />
               </p>
               <p>
-                Que vous soyez un artiste émergent ou confirmé, chaque projet est
-                abordé avec la même attention aux détails et le même engagement
-                envers l'excellence sonore.
+              Je travaille avec tous types d'artistes et de musiciens sur des styles divers comme la pop, le rock, la folk, la soul, la variété ou encore le métal, autant de styles que de projets artistiques uniques.
+              <br />
+              N'hésitez pas à me contacter pour que l'on regarde ensemble en quoi je peux vous aider !
+
               </p>
             </div>
             <div className="about__stats">
@@ -45,6 +47,28 @@ export default function About() {
                 <span className="about__stat-label">Artistes accompagnés</span>
               </div>
             </div>
+            <a
+              href="https://www.instagram.com/maxroseproductions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="about__instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="none" strokeWidth="2">
+                <defs>
+                  <linearGradient id="instagram-gradient-about" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#FFDC80" />
+                    <stop offset="25%" stopColor="#F77737" />
+                    <stop offset="50%" stopColor="#E1306C" />
+                    <stop offset="75%" stopColor="#C13584" />
+                    <stop offset="100%" stopColor="#833AB4" />
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#instagram-gradient-about)" />
+                <circle cx="12" cy="12" r="4" stroke="url(#instagram-gradient-about)" />
+                <circle cx="18" cy="6" r="1.5" fill="url(#instagram-gradient-about)" stroke="none" />
+              </svg>
+              <span>@maxroseproductions</span>
+            </a>
           </div>
         </div>
       </div>

@@ -41,6 +41,21 @@
 
 .contact__detail-icon {
   font-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.contact__detail--link {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact__detail--link:hover {
+  color: var(--color-accent);
 }
 
 .contact__form {

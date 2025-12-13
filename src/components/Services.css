@@ -65,6 +65,12 @@
   right: 0;
   padding: var(--spacing-lg) var(--spacing-md);
   z-index: 1;
+  transform: translateY(0);
+  transition: transform var(--transition-normal);
+}
+
+.services__card:hover .services__card-content {
+  transform: translateY(-80px);
 }
 
 .services__card-title {
@@ -112,5 +118,13 @@
   .services__card-description {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .services__card-content {
+    transform: translateY(-80px);
+  }
+
+  .services__card:hover .services__card-content {
+    transform: translateY(-80px);
   }
 }

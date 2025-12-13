@@ -57,19 +57,37 @@ export default function Contact() {
           <div className="contact__info">
             <h3>Travaillons ensemble</h3>
             <p>
-              Vous avez un projet musical ? N'hésitez pas à me contacter
-              pour discuter de vos idées et de la façon dont je peux vous
-              accompagner dans votre création.
+            Un projet, une idée, ou simplement une envie d’échanger ?
+            <br />
+            Je serais ravi d'en savoir un peu plus sur vous, vos projets et vos idées, quelque soient leur stade d’avancement !
             </p>
             <div className="contact__details">
               <div className="contact__detail">
                 <span className="contact__detail-icon">📍</span>
-                <span>Paris, France</span>
+                <span>Clichy, France</span>
               </div>
-              <div className="contact__detail">
-                <span className="contact__detail-icon">✉️</span>
-                <span>contact@maxrose.studio</span>
-              </div>
+              <a
+                href="https://www.instagram.com/maxroseproductions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact__detail contact__detail--link"
+              >
+                <svg className="contact__detail-icon contact__detail-icon--instagram" viewBox="0 0 24 24" fill="none" strokeWidth="2">
+                  <defs>
+                    <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#FFDC80" />
+                      <stop offset="25%" stopColor="#F77737" />
+                      <stop offset="50%" stopColor="#E1306C" />
+                      <stop offset="75%" stopColor="#C13584" />
+                      <stop offset="100%" stopColor="#833AB4" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#instagram-gradient)" />
+                  <circle cx="12" cy="12" r="4" stroke="url(#instagram-gradient)" />
+                  <circle cx="18" cy="6" r="1.5" fill="url(#instagram-gradient)" stroke="none" />
+                </svg>
+                <span>@maxroseproductions</span>
+              </a>
             </div>
           </div>
 
