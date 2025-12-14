@@ -39,11 +39,11 @@ export default function About() {
                 <span className="about__stat-label">Années d'expérience</span>
               </div>
               <div className="about__stat">
-                <span className="about__stat-number">200+</span>
+                <span className="about__stat-number">40+</span>
                 <span className="about__stat-label">Projets réalisés</span>
               </div>
               <div className="about__stat">
-                <span className="about__stat-number">50+</span>
+                <span className="about__stat-number">20+</span>
                 <span className="about__stat-label">Artistes accompagnés</span>
               </div>
             </div>

@@ -1,0 +1,6 @@
+# Robots.txt for maxrose.fr
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://maxrose.fr/sitemap.xml
