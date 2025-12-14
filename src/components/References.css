@@ -11,13 +11,15 @@
 }
 
 .references__track {
+  --cards-visible: 3;
+  --card-gap: var(--spacing-lg);
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--card-gap);
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: var(--spacing-md) var(--spacing-sm);
+  padding: var(--spacing-md) 0;
   scroll-snap-type: x mandatory;
 }
 
@@ -26,7 +28,8 @@
 }
 
 .references__card {
-  flex-shrink: 0;
+  /* Calculate width to fit exactly N cards with gaps */
+  flex: 0 0 calc((100% - (var(--cards-visible) - 1) * var(--card-gap)) / var(--cards-visible));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,8 +39,8 @@
 
 .references__image-container {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  aspect-ratio: 1;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -178,48 +181,22 @@
   transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
-  .references__carousel {
-    gap: var(--spacing-sm);
-  }
-
+@media (max-width: 900px) {
   .references__track {
-    padding: var(--spacing-sm) var(--spacing-xs);
-    gap: var(--spacing-md);
-  }
-
-  .references__image-container {
-    width: 220px;
-    height: 220px;
+    --cards-visible: 2;
+    --card-gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
   }
 
   .references__info-item {
     font-size: 0.875rem;
   }
-
-  .references__nav {
-    width: 40px;
-    height: 40px;
-  }
-
-  .references__nav svg {
-    width: 20px;
-    height: 20px;
-  }
 }
 
-@media (max-width: 480px) {
-  .references__nav {
-    display: none;
-  }
-
+@media (max-width: 550px) {
   .references__track {
-    padding: var(--spacing-sm) var(--spacing-xs);
-  }
-
-  .references__image-container {
-    width: 200px;
-    height: 200px;
+    --cards-visible: 1;
+    --card-gap: var(--spacing-md);
   }
 
   .references__info {

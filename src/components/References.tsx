@@ -55,20 +55,17 @@ export default function References() {
   const trackRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const calculateVisibleCount = () => {
-      if (trackRef.current && trackRef.current.children.length > 0) {
-        const trackWidth = trackRef.current.clientWidth
-        const card = trackRef.current.children[0] as HTMLElement
-        const cardWidth = card.offsetWidth
-        const gap = parseInt(getComputedStyle(trackRef.current).gap) || 24
-        const count = Math.floor((trackWidth + gap) / (cardWidth + gap))
-        setVisibleCount(Math.max(1, count))
+    const updateVisibleCount = () => {
+      if (trackRef.current) {
+        // Read the --cards-visible CSS variable
+        const count = parseInt(getComputedStyle(trackRef.current).getPropertyValue('--cards-visible')) || 3
+        setVisibleCount(count)
       }
     }
 
-    calculateVisibleCount()
-    window.addEventListener('resize', calculateVisibleCount)
-    return () => window.removeEventListener('resize', calculateVisibleCount)
+    updateVisibleCount()
+    window.addEventListener('resize', updateVisibleCount)
+    return () => window.removeEventListener('resize', updateVisibleCount)
   }, [])
 
   useEffect(() => {
@@ -81,23 +78,40 @@ export default function References() {
       const cardWidth = card.offsetWidth
       const gap = parseInt(getComputedStyle(track).gap) || 24
       const scrollLeft = track.scrollLeft
-      const newIndex = Math.round(scrollLeft / (cardWidth + gap))
-      setCurrentIndex(Math.max(0, Math.min(newIndex, references.length - visibleCount)))
+      const maxScroll = track.scrollWidth - track.clientWidth
+      const maxIdx = references.length - visibleCount
+      // If at or near the end, use maxIndex to avoid rounding issues
+      const newIndex = scrollLeft >= maxScroll - 5
+        ? maxIdx
+        : Math.round(scrollLeft / (cardWidth + gap))
+      setCurrentIndex(Math.max(0, Math.min(newIndex, maxIdx)))
     }
 
     track.addEventListener('scroll', handleScroll)
+    // Also call it once to sync initial state
+    handleScroll()
     return () => track.removeEventListener('scroll', handleScroll)
   }, [visibleCount])
 
-  const step = Math.max(1, visibleCount - 1)
+  // Show arrows only when 3+ cards are visible
+  const showArrows = visibleCount >= 3
+  // Step by 2 when using arrows (keeping 1 card overlap), otherwise 1
+  const step = showArrows ? 2 : 1
+  const maxIndex = references.length - visibleCount
+  const totalDots = Math.floor(maxIndex / step) + 1
 
   const scrollToIndex = (index: number) => {
     if (trackRef.current) {
-      const card = trackRef.current.children[index] as HTMLElement
+      const track = trackRef.current
+      const card = track.children[0] as HTMLElement
       if (card) {
-        // Scroll to align the card at the left edge with some padding
-        const scrollLeft = card.offsetLeft - 24
-        trackRef.current.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' })
+        const cardWidth = card.offsetWidth
+        const gap = parseInt(getComputedStyle(track).gap) || 24
+        // For the last position, scroll to the end to avoid rounding issues
+        const scrollLeft = index >= maxIndex
+          ? track.scrollWidth - track.clientWidth
+          : index * (cardWidth + gap)
+        track.scrollTo({ left: scrollLeft, behavior: 'smooth' })
       }
     }
     setCurrentIndex(index)
@@ -109,7 +123,7 @@ export default function References() {
   }
 
   const handleNext = () => {
-    const newIndex = Math.min(references.length - visibleCount, currentIndex + step)
+    const newIndex = Math.min(maxIndex, currentIndex + step)
     scrollToIndex(newIndex)
   }
 
@@ -119,11 +133,13 @@ export default function References() {
         <h2 className="section-title">Références</h2>
 
         <div className="references__carousel">
-          <button className="references__nav references__nav--prev" onClick={handlePrev} aria-label="Previous">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
+          {showArrows && (
+            <button className="references__nav references__nav--prev" onClick={handlePrev} aria-label="Previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+          )}
 
           <div className="references__track" ref={trackRef}>
             {references.map((reference, index) => (
@@ -195,19 +211,21 @@ export default function References() {
             ))}
           </div>
 
-          <button className="references__nav references__nav--next" onClick={handleNext} aria-label="Next">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
+          {showArrows && (
+            <button className="references__nav references__nav--next" onClick={handleNext} aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          )}
         </div>
 
         <div className="references__dots">
-          {Array.from({ length: Math.floor((references.length - visibleCount) / step) + 1 }, (_, pageIndex) => (
+          {Array.from({ length: totalDots }, (_, pageIndex) => (
             <button
               key={pageIndex}
               className={`references__dot ${Math.floor(currentIndex / step) === pageIndex ? 'references__dot--active' : ''}`}
-              onClick={() => scrollToIndex(pageIndex * step)}
+              onClick={() => scrollToIndex(Math.min(pageIndex * step, maxIndex))}
               aria-label={`Go to page ${pageIndex + 1}`}
             />
           ))}
