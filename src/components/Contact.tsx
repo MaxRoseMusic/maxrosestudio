@@ -57,9 +57,9 @@ export default function Contact() {
           <div className="contact__info">
             <h3>Travaillons ensemble</h3>
             <p>
-            Un projet, une idée, ou simplement une envie d’échanger ?
+            Un projet, une idée, ou simplement une envie d’échanger&nbsp;?
             <br />
-            Je serais ravi d'en savoir un peu plus sur vous, vos projets et vos idées, quelque soient leur stade d’avancement !
+            Je serais ravi d'en savoir un peu plus sur vous, vos projets et vos idées, quelque soient leur stade d’avancement&nbsp;!
             </p>
             <div className="contact__details">
               <div className="contact__detail">
@@ -142,7 +142,7 @@ export default function Contact() {
 
             {status === 'success' && (
               <p className="contact__message contact__message--success">
-                Message envoyé avec succès ! Je vous répondrai rapidement.
+                Message envoyé avec succès&nbsp;! Je vous répondrai rapidement.
               </p>
             )}
 

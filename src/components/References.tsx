@@ -71,6 +71,24 @@ export default function References() {
     return () => window.removeEventListener('resize', calculateVisibleCount)
   }, [])
 
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+
+    const handleScroll = () => {
+      const card = track.children[0] as HTMLElement
+      if (!card) return
+      const cardWidth = card.offsetWidth
+      const gap = parseInt(getComputedStyle(track).gap) || 24
+      const scrollLeft = track.scrollLeft
+      const newIndex = Math.round(scrollLeft / (cardWidth + gap))
+      setCurrentIndex(Math.max(0, Math.min(newIndex, references.length - visibleCount)))
+    }
+
+    track.addEventListener('scroll', handleScroll)
+    return () => track.removeEventListener('scroll', handleScroll)
+  }, [visibleCount])
+
   const step = Math.max(1, visibleCount - 1)
 
   const scrollToIndex = (index: number) => {

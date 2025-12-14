@@ -4,7 +4,7 @@ const services = [
   {
     id: 'production',
     title: 'Production',
-    description: "De la composition à l'enregistrement, j’accompagne les artistes dans la construction de leur son : arrangement, direction artistique, travail sur l'intention et les textures. Mon rôle est de vous aider à révéler l’identité de vos morceaux, sans la dénaturer.",
+    description: "De la composition à l'enregistrement, j'accompagne les artistes dans la construction de leur son\u00A0: arrangement, direction artistique, travail sur l'intention et les textures. Mon rôle est de vous aider à révéler l'identité de vos morceaux, sans la dénaturer.",
     image: '/photos/DSC00856.jpg'
   },
   {
@@ -16,7 +16,7 @@ const services = [
   {
     id: 'mixing',
     title: 'Mixage & Mastering',
-    description: "Je travaille vos pistes pour révéler l’identité de vos morceaux : équilibre, dynamique et espace sonore sont pensés pour servir l’intention artistique. Mon rôle est de comprendre ce que vous cherchez afin de créer un rendu cohérent et clair, fidèle au projet, tout en respectant votre signature sonore.",
+    description: "Je travaille vos pistes pour révéler l’identité de vos morceaux\u00A0: équilibre, dynamique et espace sonore sont pensés pour servir l’intention artistique. Mon rôle est de comprendre ce que vous cherchez afin de créer un rendu cohérent et clair, fidèle au projet, tout en respectant votre signature sonore.",
     image: '/photos/DSC00898-2.jpg'
   }
 ]
