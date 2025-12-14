@@ -11,11 +11,17 @@ export default function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero__background">
-        <img
-          src="/photos/DSC00852-2.jpg"
-          alt="Studio background"
-          className="hero__image"
-        />
+        <picture>
+          <source
+            media="(max-width: 1024px)"
+            srcSet="/photos/DSC00850-2.jpg"
+          />
+          <img
+            src="/photos/DSC00852-2.jpg"
+            alt="Studio background"
+            className="hero__image"
+          />
+        </picture>
         <div className="hero__overlay"></div>
       </div>
 
