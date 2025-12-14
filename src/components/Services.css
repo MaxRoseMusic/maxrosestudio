@@ -83,7 +83,7 @@
 }
 
 .services__card:hover .services__card-description {
-  max-height: 200px;
+  max-height: 400px;
   opacity: 1;
 }
 
@@ -111,7 +111,7 @@
   }
 
   .services__card-description {
-    max-height: 200px;
+    max-height: 400px;
     opacity: 1;
   }
 }
