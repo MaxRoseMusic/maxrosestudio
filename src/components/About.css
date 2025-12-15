@@ -98,14 +98,14 @@
   align-items: center;
   gap: var(--spacing-xs);
   margin-top: var(--spacing-md);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: color var(--transition-fast);
 }
 
 .about__instagram:hover {
-  color: #ffffff;
+  color: #9d000a;
 }
 
 .about__instagram svg {
