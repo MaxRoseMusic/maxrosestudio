@@ -113,5 +113,6 @@
   .services__card-description {
     max-height: 400px;
     opacity: 1;
+    font-size: 0.85rem;
   }
 }
