@@ -59,7 +59,7 @@ export default function Contact() {
             <p>
             Un projet, une idée, ou simplement une envie d’échanger&nbsp;?
             <br />
-            Je serais ravi d'en savoir un peu plus sur vous, vos projets et vos idées, quelque soient leur stade d’avancement&nbsp;!
+            Je serais ravi d'en savoir un peu plus sur vous, vos projets et vos idées, quel que soit leur stade d’avancement&nbsp;!
             </p>
             <div className="contact__details">
               <div className="contact__detail">
