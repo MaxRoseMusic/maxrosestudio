@@ -202,3 +202,18 @@ html {
   color: var(--color-text-secondary);
   max-width: none;
 }
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.footer-instagram-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer-instagram-link:hover {
+  text-decoration: underline;
+  }
