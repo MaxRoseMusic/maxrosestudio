@@ -18,7 +18,8 @@ export default function About() {
             <div className="about__text">
               <p>
               Passionné depuis le plus jeune âge, c'est par la guitare que je fais ma rencontre avec la musique. 
-              <br />
+              </p>
+              <p>
               Très rapidement, l'envie d'enregistrer se fait ressentir et c'est avec des amis dans un espace improvisé que la constat s'impose&nbsp;: je veux produire la musique des artistes qui m'entourent.
 
               </p>
@@ -40,12 +41,12 @@ export default function About() {
                 <span className="about__stat-label">Années d'expérience</span>
               </div>
               <div className="about__stat">
-                <span className="about__stat-number">20+</span>
-                <span className="about__stat-label">Projets réalisés</span>
-              </div>
-              <div className="about__stat">
                 <span className="about__stat-number">10+</span>
                 <span className="about__stat-label">Artistes accompagnés</span>
+              </div>
+              <div className="about__stat">
+                <span className="about__stat-number">20+</span>
+                <span className="about__stat-label">Projets réalisés</span>
               </div>
             </div>
             <a
