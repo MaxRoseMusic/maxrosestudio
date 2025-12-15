@@ -23,14 +23,15 @@ export default function About() {
 
               </p>
               <p>
-              Aujourd'hui, fort de l'aménagement de 2 home studios, l'aboutissement de nombreux projets, l'accompagnement de dizaines d'artistes et la connaissance de mon matériel et de mon espace, je propose un accompagnement complet de la composition au mastering.
+              Aujourd'hui, fort de l'aménagement de mon deuxième homestudio, l'aboutissement de nombreux projets, l'accompagnement de dizaines d'artistes et la connaissance de mon matériel et de mon espace, je propose un accompagnement complet de la composition au mastering.
               <br />
               </p>
               <p>
               Je travaille avec tous types d'artistes et de musiciens sur des styles divers comme la pop, le rock, la folk, la soul, la variété ou encore le métal, autant de styles que de projets artistiques uniques.
-              <br />
+              </p>
+              <p>
               N'hésitez pas à me contacter pour que l'on regarde ensemble en quoi je peux vous aider&nbsp;!
-
+              <br /> 
               </p>
             </div>
             <div className="about__stats">
