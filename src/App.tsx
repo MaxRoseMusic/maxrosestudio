@@ -19,7 +19,7 @@ function App() {
       <footer className="footer">
         <div className="container">
           <p>&copy; {new Date().getFullYear()} Max Rose Studio. Tous droits réservés.</p>
-          <p>&copy;photos par</p> <span href="https://www.instagram.com/louisethb/">@louisethb</span>
+         <p>&copy;photos par</p> <a href="https://www.instagram.com/louisethb/">@louisethb</a>
         </div>
       </footer>
     </>
