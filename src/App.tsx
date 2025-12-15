@@ -19,9 +19,8 @@ function App() {
       <footer className="footer">
         <div className="container">
           <p>&copy; {new Date().getFullYear()} Max Rose Studio. Tous droits réservés.</p>
-        </div>
-        <div className="container">
           <p>&copy; Photos par Louise Thibon.</p>
+
         </div>
       </footer>
     </>
