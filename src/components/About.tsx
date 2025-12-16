@@ -7,7 +7,7 @@ export default function About() {
         <div className="about__grid">
           <div className="about__image-container">
             <img
-              src="/photos/DSC01047.jpg"
+              src="/photos/DSC01047-C.jpg"
               alt="Max Rose Studio"
               className="about__image"
             />
