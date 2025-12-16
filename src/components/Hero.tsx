@@ -14,10 +14,10 @@ export default function Hero() {
         <picture>
           <source
             media="(max-width: 1024px)"
-            srcSet="/photos/DSC00850-2.jpg"
+            srcSet="/photos/DSC00850-3-Cropped-C.jpg"
           />
           <img
-            src="/photos/DSC00852-2.jpg"
+            src="/photos/DSC00852-3-C.jpg"
             alt="Studio background"
             className="hero__image"
           />
