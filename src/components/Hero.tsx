@@ -14,7 +14,7 @@ export default function Hero() {
         <picture>
           <source
             media="(max-width: 1024px)"
-            srcSet="/photos/DSC00850-3-Cropped-C.jpg"
+            srcSet="/photos/DSC00850-3-C.jpg"
           />
           <img
             src="/photos/DSC00852-3-C.jpg"
